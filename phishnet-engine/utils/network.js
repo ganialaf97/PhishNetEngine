@@ -57,7 +57,7 @@ export const networkUtils = {
         const pkgManager = this.detectPackageManager();
         if (!pkgManager) return false;
 
-        const deps = ['curl', 'wget', 'unzip', 'ssh'];
+        const deps = ['curl', 'ssh'];
         const missing = [];
 
         for (const dep of deps) {
