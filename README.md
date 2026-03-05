@@ -4,11 +4,19 @@ A powerful, modular credential harvesting framework for authorized security test
 **PhishNetEngine** is like a game engine, but for creating phishing tools. Just as a game engine provides the physics, rendering, and mechanics to build games, PhishNetEngine provides the server, tunneling, data capture, and admin panel to build credential harvesting tools.
 
 ## Legal Disclaimer
-**This tool is for authorized security testing and educational purposes ONLY.**
-   - Only use on systems you own or have explicit written permission to test
-   - Unauthorized use for phishing or credential harvesting is ILLEGAL
-   - Users are solely responsible for compliance with all applicable laws
-   - The developers assume no liability and are not responsible for misuse
+
+This tool is intended **strictly for authorized security testing, research, and educational purposes only.**
+
+By using this software, you agree that:
+
+- You will **only use this tool on systems you own or have explicit written permission to test**.
+- You will **not use this tool for illegal phishing, credential harvesting, or any malicious activities**.
+- Any misuse of this software is **the sole responsibility of the user**.
+- The developers **assume no liability and are not responsible for any misuse, damage, or legal consequences caused by this tool**.
+- Users must **comply with all applicable local, state, national, and international laws**.
+
+Unauthorized use of this tool may violate cybersecurity, privacy, and computer misuse laws.  
+The authors and contributors of this project **are not responsible for any illegal use or misuse of this software**.
 
 ## Features
 - **Host Any Website** - Drop your HTML/CSS/JS files and they're live instantly
