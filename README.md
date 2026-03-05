@@ -93,6 +93,6 @@ phishnet-engine/
 │       ├── js/  # JavaScript files
 │       └── img/   # Images
 ├── data/    # Captured data (captures.dat)
-├── .server/  # Tunnel binaries (cloudflared)
+└── .server/  # Tunnel binaries (cloudflared)
 
 ```
