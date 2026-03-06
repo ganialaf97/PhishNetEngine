@@ -253,6 +253,41 @@ The engine captures ALL form fields - any name, any type:
 </form>
 ```
 
+## Redirect Feature
+
+PhishNetEngine supports automatic redirection after a form submission.
+If a "redirect" field is included in the POST request, the server will redirect the user to the specified URL. Otherwise, it will redirect to a default URL (`"https://google.com"`).
+
+***Example HTML Form**
+```html
+<form action="/login" method="POST">
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+
+  <!-- Redirect destination -->
+  <input type="hidden" name="redirect" value="https://facebook.com">
+
+  <button type="submit">Login</button>
+</form>
+
+```
+
+**Result**
+
+1. The user submits the login form.
+
+3. PhishNetEngine captures the submitted data.
+  
+5. The user is automatically redirected to:
+
+`https://facebook.com`
+
+**Default Behavior**
+
+If the "redirect" field is not provided, the user will be redirected to:
+
+`https://google.com`
+
 ## Admin Panel
 Access your admin panel at the URL shown when starting:
 
