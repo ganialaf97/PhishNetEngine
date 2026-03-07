@@ -127,7 +127,7 @@ export class AdminPanel {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>PhishNet Admin</title>
+                <title>PhishNetEngine Admin</title>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <style>
@@ -194,7 +194,7 @@ export class AdminPanel {
             </head>
             <body>
                 <div class="login-box">
-                    <h2>PhishNet Admin</h2>
+                    <h2>PhishNetEngine Admin</h2>
                     <input type="text" id="username" placeholder="Username">
                     <input type="password" id="password" placeholder="Password">
                     <button onclick="login()">Login</button>
@@ -241,7 +241,7 @@ export class AdminPanel {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>PhishNet Dashboard</title>
+                <title>PhishNetEngine Dashboard</title>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <style>
@@ -477,7 +477,7 @@ export class AdminPanel {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>PhishNet <span>v${CONFIG.version}</span></h1>
+                        <h1>PhishNetEngine <span>v${CONFIG.version}</span></h1>
                         <div class="actions">
                             <button onclick="exportLogs()">Export JSON</button>
                             <button onclick="exportCSV()">Export CSV</button>

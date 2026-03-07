@@ -29,7 +29,7 @@ export class PhishNetEngine {
 
     async init() {
         console.clear();
-        console.log(chalk.cyan(`PhishNet v${CONFIG.version} Advanced Phishing Engine`));
+        console.log(chalk.cyan(`PhishNetEngine v${CONFIG.version} Advanced Phishing Engine`));
         
         if (os.platform() !== 'linux') {
             console.log(chalk.red('Linux required'));
